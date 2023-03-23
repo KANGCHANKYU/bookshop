@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/image/책장옆 복사본.png">
+    <link href="/css/admin/product.css" rel="stylesheet" type="text/css">
+    <link href="https://unpkg.com/ress/dist/ress.min.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/d2714aa12c.js" crossorigin="anonymous"></script>
+    <script src="/js/admin/product.js" async> </script>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-barun-gothic.css" rel="stylesheet">
+    
+    <title>책장 옆</title>
+
+</head>
+<body>
+    
+    <header class="page_header wrapper">
+        <a href="">
+            <img class="nav_logo" src="../resource/책장옆.png" alt="HOME">
+        </a>
+        <!-- 버튼으로 해야 할지? -->
+        <nav>
+            <ul class="main_nav">
+                <li><a href="">로그아웃</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 사이드 바 -->
+    
+    <aside>
+        <table class="sub_menu">
+            <td>
+                <li><a class="" href="#">&nbsp;&nbsp;&nbsp;회원 관리&nbsp;&nbsp;&nbsp;</a></li>
+                <li><a class="product_management">&nbsp;&nbsp;&nbsp;상품 관리&nbsp;&nbsp;&nbsp;</a></li>
+                <li><a class="" href="#">결제/배송 관리</a></li>
+                <li><a class="" href="Notice.html">&nbsp;&nbsp;&nbsp;고객 센터&nbsp;&nbsp;&nbsp;</a></li>
+            </td>
+        </table>
+    </aside>
+
+    <!-- 탑 메뉴 -->
+    <table class="top_menu">
+        <tr>
+            <th><a class="current_page" href="Product_select_update.html">상품 조회/수정</a></th>
+            <th><a href="Product_regist.html">&nbsp;&nbsp;&nbsp;상품 등록&nbsp;&nbsp;&nbsp;</a></th>
+        </tr>
+    </table>
+
+    <!-- 상단이동버튼 -->
+    <img class="topbtn" src="../resource/topbtn.svg" ></img>   
+
+    
+    <form class="product_info">
+        <div class="div_width">
+            <label class="label_title">검색어</label>
+            <label>
+                상품 번호
+                <input type="text" id="product_code" class="mediuminfo">
+                <span></span>
+            </label>
+            <label>
+                상품명
+                <input type="text" id="product_name" class="mediuminfo">
+                <span></span>
+            </label>
+            <br>
+            <label class="label_title">판매상태</label>
+            <label>
+                <input type="checkbox" id="sales_status" class="checkboxinfo">
+                전체
+                <span></span>
+            </label>
+            <label>
+                <input type="checkbox" id="sales_status" class="checkboxinfo" checked="checked">
+                판매중
+                <span></span>
+            </label>
+            <label>
+                <input type="checkbox" id="sales_status" class="checkboxinfo">
+                판매종료(품절)
+                <span></span>
+            </label>
+        </div>
+
+        <br>
+        
+        <div class="div_width">
+            <label class="label_title">카테고리</label>
+            <label>
+                <select name="category" class="large_select" id="category">
+                    <option value="category1">대분류</option>
+                    <option value="category2">국내도서</option>
+                    <option value="category3">해외도서</option>
+                </select>
+            </label>
+            <label>
+                <select name="category" class="sub_select" id="category">
+                    <option value="category1">소분류</option>                        <option value="category2">소설</option>
+                    <option value="category3">자기개발</option>
+                    <option value="category4">시/에세이</option>
+                    <option value="category5">인문/사회</option>
+                    <option value="category6">경제/경영</option>
+                    <option value="category7">컴퓨터/IT</option>
+                    <option value="category8">만화</option>
+                </select>
+            </label>
+        </div>
+
+            <br>
+
+        <div class="div_width">
+            <label class="label_title">결제여부</label>
+            <label>
+                <input type="radio" id="payment_status" name="radioinfo" checked="checked">
+                전체
+                <span></span>
+            </label>
+            <label>
+                <input type="radio" id="payment_status" name="radioinfo">
+                결제가능상품
+                    <span></span>
+                </label>
+                <label>
+                    <input type="radio" id="payment_status" name="radioinfo">
+                    결제불가능상품
+                    <span></span>
+                </label>
+                <br>
+            <label class="label_title">기간</label>
+            <label>
+                <select name="category" class="large_select" id="category">
+                    <option value="category1">상품등록일</option>
+                    <option value="category2">판매시작일</option>
+                    <option value="category3">판매종료일</option>
+                    <option value="category4">최종수정일</option>
+                </select>
+            </label>
+        </div>
+
+        <br>
+
+        <div class="info_btn">
+             <input type="submit" class="btn_1" value="수정 항목 저장"/>
+     </form>
+     <br><br><br><br><br><br><br><br><br><br>
+ 
+
+   </body>
+</html>
