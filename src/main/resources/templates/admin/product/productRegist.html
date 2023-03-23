@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/image/책장옆 복사본.png">
+    <link href="/css/admin/product.css" rel="stylesheet" type="text/css">
+    <link href="https://unpkg.com/ress/dist/ress.min.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/d2714aa12c.js" crossorigin="anonymous"></script>
+    <script src="/js/admin/product.js" async> </script>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-barun-gothic.css" rel="stylesheet">
+    
+    <title>책장 옆</title>
+
+</head>
+<body>
+    
+    <header class="page_header wrapper">
+        <a href="">
+            <img class="nav_logo" src="/image/책장옆.png" alt="HOME">
+        </a>
+        <!-- 버튼으로 해야 할지? -->
+        <nav>
+            <ul class="main_nav">
+                <li><a href="">로그아웃</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 사이드 바 -->
+    <aside>
+        <table class="sub_menu">
+            <td>
+                <li><a class="" href="#">&nbsp;&nbsp;&nbsp;회원 관리&nbsp;&nbsp;&nbsp;</a></li>
+                <li><a class="product_management">&nbsp;&nbsp;&nbsp;상품 관리&nbsp;&nbsp;&nbsp;</a></li>
+                <li><a class="" href="#">결제/배송 관리</a></li>
+                <li><a class="" href="Notice.html">&nbsp;&nbsp;&nbsp;고객 센터&nbsp;&nbsp;&nbsp;</a></li>
+            </td>
+        </table>
+    </aside>
+
+    <!-- 탑 메뉴 -->
+        <table class="top_menu">
+            <tr>
+                <th><a href="Product_select_update.html">상품 조회/수정</a></th>
+                <th><a class="current_page" href="Product_regist.html">&nbsp;&nbsp;&nbsp;상품 등록&nbsp;&nbsp;&nbsp;</a></th>
+            </tr>
+        </table>
+
+    <!-- 상단이동버튼 -->
+    <img class="topbtn" src="/image/topbtn.svg" ></img>   
+
+        
+    <form class="product_info" action="/admin/product/regist" method="POST" enctype="multipart/form-data">
+        <div class="div_width">
+            <label class="label_title">카테고리</label>
+            <label>
+                <select name="category" class="large_select" id="category">
+                    <option value="category1">대분류</option>
+                    <option value="category2">국내</option>
+                    <option value="category3">외국</option>
+                </select>
+            </label>
+            <label>
+                <select name="category" class="sub_select" id="category">
+                    <option value="category1">소분류</option>
+                    <option value="category2">소설</option>
+                    <option value="category3">자기개발</option>
+                    <option value="category4">시/에세이</option>
+                    <option value="category5">인문/사회</option>
+                    <option value="category6">경제/경영</option>
+                    <option value="category7">컴퓨터/IT</option>
+                    <option value="category8">만화</option>
+                </select>
+            </label>
+        </div>
+
+        <br>
+
+        <div class="div_width">
+            <label class="label_title">상품명</label>
+                <input type="text" id="name" class="longinfo">
+                <span></span>
+            </label>
+        </div>
+
+        <br>
+
+        <div class="div_width">
+            <label class="label_title">판매가</label>
+            <input type="text" id="price" class="shortinfo">
+                <span></span>
+            <label>
+                할인률
+                <input type="text" id="discount" class="shortinfo">
+                <span>원</span>
+                &nbsp;&nbsp;또는
+                <input type="text" id="discount2" class="shortinfo">
+                <span>%</span>
+            </label>
+        </div>
+
+        <br>
+
+        <div class="div_width">
+            <label class="label_title">재고수량</label>
+            <input type="text" id="stock" class="shortinfo">
+                <span>개</span>
+            </label>
+        </div>
+
+        <br>
+
+        <div class="div_width">
+            <label class="label_title">상품 주요정보</label>
+            <div class="major_info">
+                <label class="label_title">ISBN-13</label><input type="text" id="ISBN-13" class="longinfo"><br>
+                <label class="label_title">ISNB-10</label><input type="text" id="ISNB-10" class="longinfo"><br>
+                <label class="label_title">출간일</label><input type="text" id="pub_date" class="shortinfo">
+                <label>출판사</label><input type="text" id="publisher" class="shortinfo"><br>
+                <label class="label_title">글작가</label><input type="text" id="author" class="longinfo"><br>
+                <label class="label_title">번역자</label><input type="text" id="translator" class="longinfo"><br>
+            </div>
+            
+        </div>
+
+        <br>
+
+        <div class="div_width">
+            <label class="label_title">상품이미지</label>
+            <br>
+                <label class="label_image">대표이미지</label>
+                <a role="button" href class="btn-add-img"></a>
+                <span></span>
+                <br>
+                <label class="label_image">추가이미지</label>
+                <a role="button" href class="btn-add-img"></a>
+                <span></span>
+        </div>
+
+        <br>
+
+        <div class="div_width">
+            <label class="label_title">상세설명</label>
+            <br>
+                <input type="text" id="detail" class="detailbox">
+                <span></span>
+            </label>
+        </div>
+
+        <br>
+
+        <div class="info_btn">
+            <button id="registBtn" class="btn_1">등 록</button>
+        </div>
+    </form><br><br><br><br><br><br><br><br><br><br>
+	 
+	<script>
+
+		let registForm = $("#registForm")
+	
+	/* 상품 등록 버튼 */
+	$("#registBtn").on("click",function(e){
+		
+		e.preventDefault();
+		
+		registForm.submit();
+		
+	});
+	
+	</script> 	
+	 
+	 
+   </body>
+</html>
