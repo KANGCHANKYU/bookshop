@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sale</title>
+    <link rel="stylesheet" type="text/css" href="/css/sale.css">
+    <link rel="stylesheet" type="text/css" href="/css/nav.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+</head>
+<body>
+  <div th:replace="web/common/nav.html"></div>
+
+    <div class="categoryTable">
+        <div class="Kcategory">
+            <h2>국내 도서</h2>
+            <div class="category" th:if="${category.getTopCategoryCode() == 1}" th:each="category : ${categoryList}">
+                <a th:href="@{/web/sale/salepage/categoryDetails(categoryCode=${category.getSubCategoryCode()})}" th:text="${ category.getCategoryName() }"></a>
+            </div>
+        </div>
+        <div class="Ecategory">
+            <h2>외국 도서</h2>
+            <div class="category" th:if="${category.getTopCategoryCode() == 2}" th:each="category : ${categoryList}">
+                <a th:href="@{/web/sale/salepage/categoryDetails(categoryCode=${category.getSubCategoryCode()})}"  th:text="${ category.getCategoryName() }"></a>
+            </div>
+        </div>
+    </div>
+  <div class="categoryTypeSale">
+      <h2 th:text="${categoryName}"></h2>
+      <div class="SaleList">
+          <th:block th:each="title : ${fileList}">
+          </th:block>
+      </div>
+  </div>
+
+  <div class="footer" th:replace="web/common/footer.html"></div>
+</body>
+<footer>
+
+</footer>
+</html>
