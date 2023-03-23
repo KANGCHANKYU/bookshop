@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greedy.bookshop.admin.member.model.dao.MemberMapper">
+
+	<resultMap id="memberResultMap" type="com.greedy.bookshop.admin.member.model.dto.MemberDTO">
+		<id property="code" column="USER_CODE"/>
+		<result property="id" column="USER_ID"/>
+		<result property="pwd" column="USER_PWD"/>
+		<result property="name" column="USER_NAME"/>
+		<result property="no" column="USER_NO"/>
+		<result property="phone" column="USER_PHONE"/>
+		<result property="createUserDate" column="CREATE_USER_DATE"/>
+		<result property="deleteUserDate" column="DELETE_USER_DATE"/>
+		<result property="status" column="USER_STATUS"/>
+		<result property="gradecode" column="USER_ROLE_CODE"/>
+		<result property="rolecode" column="USER_RATING_CODE"/>
+	</resultMap>
+	
+<!--  <resultMap id="memberRoleResultMap" type="com.greedy.bookshop.admin.member.model.dto.MemberRoleDTO" >
+		<id property="rolecode" column="USER_ROLE_CODE"/>
+		<result property="rolename" column="ROLE_NAME"/>
+		<result property="roledesc" column="ROLE_DESC"/>
+		
+		<association property="authority" resultMap="authorityResultMap"/>
+	</resultMap>
+	
+	<resultMap id="MemberGradeResultMap" type="com.greedy.bookshop.admin.member.model.dto.MemberGradeDTO" >
+		<id property="gradecode" column="USER_RATING_CODE"/>
+		<result property="gradename" column="USER_RATING_NAME"/>
+	</resultMap> -->
+
+	<select id="findAllMember" resultMap="memberResultMap">
+		SELECT
+		  USER_ID
+		, USER_NAME
+		, USER_PHONE
+		  FROM TBL_USER
+		ORDER BY USER_CODE
+
+	</select>
+
+
+</mapper>
